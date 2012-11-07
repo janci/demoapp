@@ -12,6 +12,10 @@ class HomepagePresenter extends BasePresenter
         die();
     }
 
+    public function startup(){
+        parent::startup();
+    }
+
 	public function renderDefault()
 	{
 		$this->template->anyVariable = 'any value';
