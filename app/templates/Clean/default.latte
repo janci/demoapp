@@ -1,0 +1,6 @@
+{default $page=1}
+{block #content}
+
+Som na stranke {$page}
+{$datum|date:"d-m-Y"}
+{link Homepage:deafult datum=>$datum->format('d-m-Y')}
