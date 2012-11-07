@@ -1,0 +1,1 @@
+jQuery(function(){ alert('Som tu!'); });

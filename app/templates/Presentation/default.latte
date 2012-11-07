@@ -1,0 +1,11 @@
+{default name="John Doe"}
+{block content}
+
+{snippet changeName}
+    Ahoj, volám sa {$name}.
+{/snippet}
+
+
+<br /><br />
+<a href="{link setmyname!}" title="Link na zmenu mena">Budem Jano</a>
+<a href="{link clearmyname!}" title="Zrusi nastavené meno">Vymaž meno</a>
