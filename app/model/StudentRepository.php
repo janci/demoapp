@@ -14,7 +14,7 @@ class StudentRepository
     }
 
     public function changeName($id, $newName){
-        #$this->arr = array();
+        $this->arr = array();
         $this->arr[$id] = $newName;
     }
     public function getStudentsByClassIA(){
