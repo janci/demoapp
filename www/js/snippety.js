@@ -1,1 +1,6 @@
-jQuery(function(){ alert('Som tu!'); });
+jQuery(function($){
+    $('a.ajax').click(function(){
+        $.get(this.href);
+        return false;
+    })
+});
