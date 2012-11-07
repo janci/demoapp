@@ -12,6 +12,11 @@ class PresentationPresenter extends BasePresenter
        $this->invalidateControl("changeName");
    }
 
+   public function handleSetjsval(){
+       $this->payload->odpoved = "Jo, jo, ty ale jses.";
+       $this->invalidateControl();
+   }
+
    public function actionDefault(){
 
    }
