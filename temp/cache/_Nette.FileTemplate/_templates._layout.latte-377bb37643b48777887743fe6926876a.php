@@ -1,23 +1,23 @@
-<?php //netteCache[01]000370a:2:{s:4:"time";s:21:"0.57194200 1351706462";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"/home/weby/prednasky/app/templates/@layout.latte";i:2;i:1349125320;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"6a33aa6 released on 2012-10-01";}}}?><?php
+<?php //netteCache[01]000370a:2:{s:4:"time";s:21:"0.45197700 1352314070";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:48:"/home/weby/prednasky/app/templates/@layout.latte";i:2;i:1352314034;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"6a33aa6 released on 2012-10-01";}}}?><?php
 
 // source file: /home/weby/prednasky/app/templates/@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'r12ahhvz86')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'n54p28hdx8')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lba30e7eae52_title')) { function _lba30e7eae52_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbf2d199e555_title')) { function _lbf2d199e555_title($_l, $_args) { extract($_args)
 ?>Nette Application Skeleton<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbcbee5c6ac9_head')) { function _lbcbee5c6ac9_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb28ff08b423_head')) { function _lb28ff08b423_head($_l, $_args) { extract($_args)
 ;
 }}
 
@@ -58,6 +58,8 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 
 	<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
+	<script src="http://files.nette.org/108/jquery.nette.js"></script>
+	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/snippety.js"></script>
 	<?php call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
 
 </head>
