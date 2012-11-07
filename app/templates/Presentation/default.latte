@@ -3,11 +3,23 @@
 
 {snippet changeName}
     Ahoj, volám sa {$name}.
-{/snippet}
 
+{/snippet}
+<br />
+
+{snippet students}
+    {foreach $students as $id=>$student}
+        {snippet student-$id}
+            <span class="student"> Toto je študent {$student} </span><br />
+        {/snippet}
+    {/foreach}
+{/snippet}
 
 <br /><br />
 <a class="ajax" href="{link setmyname!}" title="Link na zmenu mena">Budem Jano</a>
 <a class="ajax" href="{link clearmyname!}" title="Zrusi nastavené meno">Vymaž meno</a>
 
 <a class="jscallback" href="{link setjsval!}" title="Nastaví javascript premennú">Jsem blb? </a>
+
+
+<a class="ajax" href="{link changeStudent!}" title="Vymení študenta v triede">Vymeň študenta</a>

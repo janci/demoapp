@@ -1,4 +1,5 @@
 jQuery(function($){
+    $('.student:first').css('color','red');
     $('a.ajax').click(function(){
         $.get(this.href);
         return false;

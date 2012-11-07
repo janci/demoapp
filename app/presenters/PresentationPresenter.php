@@ -3,10 +3,23 @@
 class PresentationPresenter extends BasePresenter
 {
    private $userSession;
+   private $studentRepository;
+
+   public function __construct(\Nette\DI\Container $container, StudentRepository $sr){
+        parent::__construct($container);
+        $this->studentRepository = $sr;
+   }
+
+   public function handleChangeStudent(){
+       $this->studentRepository->changeName(2, 'Lukáš Malý');
+       $this->invalidateControl('students');
+   }
+
    public function startup(){
        parent::startup();
        $this->userSession = $this->getSession('user');
    }
+
 
    public function handleSetmyname(){
        $this->template->name = "Ján Švantner";
@@ -29,5 +42,11 @@ class PresentationPresenter extends BasePresenter
    public function actionDefault(){
        if(isset($this->userSession->name))
         $this->template->name = $this->userSession->name;
+
+
    }
+
+    public function renderDefault(){
+        $this->template->students = $this->studentRepository->getStudentsByClassIA();
+    }
 }
