@@ -5,9 +5,9 @@ class FormPresenter extends BasePresenter
 {
     public function createComponentContactForm(){
         $categories = array(
-            '1' => 'Technická podpora',
-            '2' => 'Softvérová podpora',
-            '3' => 'Manažment'
+            'Technická podpora' => 'Technická podpora',
+            'Softvérová podpora' => 'Softvérová podpora',
+            'Manažment' => 'Manažment'
         );
         $form = new \Nette\Application\UI\Form();
 
@@ -43,13 +43,15 @@ class FormPresenter extends BasePresenter
             'secure' => 'ssl'
         );
 
-        $smtpMailer = new \Nette\Mail\SmtpMailer();
+        $smtpMailer = new \Nette\Mail\SmtpMailer($options);
 
         $email = new \Nette\Mail\Message();
+        $email->setSubject("Mail zo stránky: ".$values->category);
         $email->setMailer($smtpMailer);
         $email->setFrom('prednaska@janci.net');
+        $email->addReplyTo($values->email);
         $email->addTo("posta.janci@gmail.com");
-        $email->setHtmlBody('<b>Tento email je odomna</b>');
+        $email->setHtmlBody('Text:<br /><i>'.$values->text.'</i><br> Zákaznik '.$values->nameSurname);
         $email->send();
         //$email->
     }
