@@ -25,9 +25,17 @@ class FormPresenter extends BasePresenter
         $form->addButton('reset', 'Vymazať formulár');
         $form->addSubmit('submit', 'Odoslať formulár');
 
+        $form->onSuccess[] = array($this, 'sendEmail');
         //$form['nameSurname']->addRule();
 
         return $form;
+    }
+
+    public function sendEmail(Form $form){
+        $values = $form->getValues();
+        dump($values->nameSurname);
+        dump($values['nameSurname']);
+        dump($values);
     }
 
 }
