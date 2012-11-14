@@ -53,6 +53,8 @@ class FormPresenter extends BasePresenter
         $email->addTo("posta.janci@gmail.com");
         $email->setHtmlBody('Text:<br /><i>'.$values->text.'</i><br> Zákaznik '.$values->nameSurname);
         $email->send();
+
+        $this->redirect('this');
         //$email->
     }
 

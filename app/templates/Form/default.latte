@@ -2,3 +2,15 @@
 Tu bude moj formular
 
 {control contactForm}
+
+{form contactForm}
+    {label nameSurname}Meno{/label}
+    <input n:input="nameSurname" />
+    <input n:input="email" />
+    <select n:input="category">
+        {dump $form['category']->getItems()}
+    </select>
+    <textarea n:input="text"></textarea>
+    <input type="submit" value="Odošli mi!"/>
+    <input n:input="reset">
+{/form}
